@@ -2,7 +2,7 @@
   "name": "im-phil",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite --watch",
+    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
