@@ -3,10 +3,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body {
-  background-color: #c4c4c4;
 
+body {
+  background: linear-gradient(270deg, #a24bcf, #4b79cf, #4bc5cf);
+  background-size: 600% 600%;
+  animation: gradient-scroll 5s ease infinite;
 }
+
 h1 {
   text-align: center;
   font-size: 10em;
@@ -30,5 +33,40 @@ h1 {
 h1 a{
   color:inherit;
   text-decoration: inherit;
+}
+.animate {
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.animate.pop {
+  animation-duration: 0.5s;
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes gradient-scroll {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
